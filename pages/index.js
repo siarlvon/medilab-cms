@@ -150,6 +150,19 @@ const query = gql`
           description
           id
         }
+        ... on WhyUsSectionRecord {
+          __typename
+          title
+          description
+          buttonText
+          whyUsCards {
+            icon
+            title
+            description
+            id
+          }
+          id
+        }
       }
     }
   }
