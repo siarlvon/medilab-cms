@@ -1,5 +1,4 @@
 import {Inter} from 'next/font/google';
-import styles from '@/styles/Home.module.css';
 import {gql, GraphQLClient} from 'graphql-request';
 import WelcomeSection from '@/components/WelcomeSection';
 
@@ -148,6 +147,11 @@ const query = gql`
           title
           buttonText
           description
+          image {
+            url
+            width
+            height
+          }
           id
         }
         ... on WhyUsSectionRecord {
@@ -160,6 +164,79 @@ const query = gql`
             title
             description
             id
+          }
+          id
+        }
+        ... on AboutSectionRecord {
+          __typename
+          title
+          description
+          aboutCards {
+            firstIcon
+            firstTitle
+            firstDescription
+            secondIcon
+            secondTitle
+            secondDescription
+            thirdIcon
+            thirdTitle
+            thirdDescription
+          }
+          id
+        }
+        ... on CountsSectionRecord {
+          __typename
+          firstCountNumber
+          firstCountName
+          secondCountNumber
+          secondCountName
+          thirdCountNumber
+          thirdCountName
+          fourthCountNumber
+          fourthCountName
+          id
+        }
+        ... on ServicesSectionRecord {
+          __typename
+          subtitle
+          description
+          servicesCards {
+            firstName
+            firstDescription
+            secondName
+            secondDescription
+            thirdName
+            thirdDescription
+            fourthName
+            fourthDescription
+            fifthName
+            fifthDescription
+            sixthName
+            sixthDescription
+          }
+          id
+        }
+        ... on AppointmentSectionRecord {
+          __typename
+          subtitle
+          description
+          appointmentForms {
+            firstField
+            secondField
+            thirdField
+            fourthField
+            officeGroups {
+              firstOfficeName
+              secondOfficeName
+              thirdOfficeName
+            }
+            doctorsGroups {
+              firstDoctorName
+              secondDoctorName
+              thirdDoctorName
+            }
+            sixthField
+            buttonText
           }
           id
         }

@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'boxicons/css/boxicons.css';
 import '@/styles/globals.css';
 // import '@/styles/hero.css';
 // import '@/styles/why-us.css';
